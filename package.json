@@ -1,0 +1,154 @@
+{
+  "name": "libra-web-app",
+  "description": "React Boilerplate template for Create React App",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nilavathani/libra-web-app.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "npm": ">=6.4.1",
+    "node": ">=10.13.0"
+  },
+  "bugs": {
+    "url": "https://github.com/Nilavathani/libra-web-app.git/issues"
+  },
+  "keywords": [
+    "react",
+    "create-react-app",
+    "typescript",
+    "redux",
+    "redux-saga",
+    "react-redux",
+    "styled-components"
+  ],
+  "scripts": {
+    "// ---DEFAULT CRA---": "",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
+    "test:coverage": "yarn test --coverage",
+    "test:all": "yarn test:coverage --watchAll=false",
+    "checkTs": "tsc --noEmit",
+    "eslint": "eslint --ext js,ts,tsx",
+    "lint": "npm run eslint -- src",
+    "lint:fix": "npm run eslint -- --fix src",
+    "lint:css": "stylelint src/**/*.css",
+    "prettify": "prettier --write"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "npm run eslint -- --fix"
+    ],
+    "*.{md,json}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run checkTs && lint-staged",
+      "prepare-commit-msg": "devmoji -e",
+      "commit-msg": "if git-branch-is dev; then commitlint -E HUSKY_GIT_PARAMS; fi"
+    }
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/**/*/*.d.ts",
+      "!src/**/*/Loadable.{js,jsx,ts,tsx}",
+      "!src/**/*/types.ts",
+      "!src/index.tsx",
+      "!src/serviceWorker.ts"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    }
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "1.4.0",
+    "axios": "0.21.0",
+    "classnames": "2.2.6",
+    "fontfaceobserver": "2.1.0",
+    "http-proxy-middleware": "1.0.6",
+    "i18next": "19.8.2",
+    "i18next-browser-languagedetector": "6.0.1",
+    "ramda": "0.27.1",
+    "react": "16.13.1",
+    "react-app-polyfill": "1.0.6",
+    "react-awesome-styled-grid": "3.0.12",
+    "react-dom": "16.13.1",
+    "react-helmet": "6.1.0",
+    "react-i18next": "11.7.3",
+    "react-lottie": "1.2.3",
+    "react-redux": "7.2.1",
+    "react-router-dom": "5.2.0",
+    "react-scripts": "3.4.3",
+    "redux-injectors": "1.3.0",
+    "redux-saga": "1.1.3",
+    "sanitize.css": "12.0.1",
+    "styled-components": "5.2.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "8.3.5",
+    "@commitlint/config-conventional": "8.3.4",
+    "@testing-library/jest-dom": "5.11.4",
+    "@testing-library/react": "11.0.4",
+    "@types/fontfaceobserver": "0.0.6",
+    "@types/jest": "26.0.14",
+    "@types/node": "13.9.3",
+    "@types/react": "16.9.51",
+    "@types/react-dom": "16.9.8",
+    "@types/react-helmet": "6.1.0",
+    "@types/react-redux": "7.1.9",
+    "@types/react-router-dom": "5.1.6",
+    "@types/react-test-renderer": "16.9.3",
+    "@types/rimraf": "3.0.0",
+    "@types/shelljs": "0.8.8",
+    "@types/styled-components": "5.1.3",
+    "@types/testing-library__jest-dom": "5.9.4",
+    "@types/webpack": "4.41.22",
+    "@types/webpack-env": "1.15.3",
+    "chalk": "4.1.0",
+    "devmoji": "2.1.10",
+    "eslint-config-prettier": "6.12.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-prettier": "3.1.4",
+    "eslint-plugin-react": "7.21.3",
+    "eslint-plugin-react-hooks": "4.1.2",
+    "eslint-plugin-redux-saga": "1.2.1",
+    "git-branch-is": "4.0.0",
+    "husky": "4.3.0",
+    "jest-canvas-mock": "2.3.0",
+    "jest-environment-jsdom-sixteen": "1.0.3",
+    "jest-styled-components": "7.0.3",
+    "jest-watch-typeahead": "0.6.1",
+    "lint-staged": "10.4.0",
+    "prettier": "2.1.2",
+    "react-test-renderer": "16.13.1",
+    "replace-in-file": "6.1.0",
+    "rimraf": "3.0.2",
+    "stylelint": "13.7.2",
+    "stylelint-config-recommended": "3.0.0",
+    "stylelint-config-styled-components": "0.1.1",
+    "stylelint-processor-styled-components": "1.10.0",
+    "typescript": "4.0.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

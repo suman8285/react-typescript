@@ -1,0 +1,5 @@
+export const AUTH_INITIALIZE = 'AUTH_INITIALIZE';
+export const AUTH_LOGGING_IN = 'AUTH_LOGGING_IN';
+export const AUTH_LOGGED_IN = 'AUTH_LOGGED_IN';
+export const AUTH_ERROR = 'AUTH_ERROR';
+export const AUTH_LOGOUT = 'AUTH_LOGOUT';
